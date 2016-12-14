@@ -3,24 +3,86 @@ html, body{
     height:100%;
 }
 
-body { background: #ffffff; }
-
-div.wrapper {
-    background: #fff;
-    border-width: 1px;
-    box-shadow: inset 3px 3px 300px 1px rgba(0 ,0, 0,1);
-    border-radius: 3px;
-    border-style: dashed;
+body { 
+    background: #ffffff; 
+    
 }
 
-#colors
+#container
 {
-    position: fixed;
+    position: relative;
+    height:90%;
+    width:30%;
+    left: 50%;
+    top: 5%;
+    margin-left: -15%;
+    border-color: #000000;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 3px;
+
+}
+
+
+#color_wrapper
+{
+    position: relative;
     width: 80%;
-    height: 20%;
+    height: 17%;
     top: 5%;
     left: 50%;
     margin-left: -40%;
+    border-width: 1px;
+    box-shadow: inset 1px 1px 10px 1px rgba(5 ,10, 20, 0.5);
+    border-radius: 1px;
+    border-style: solid;
+}
 
+#red 
+{
+    left: 3%;
+    top: 9%;
+    bottom:2%;
+    position:absolute;
+    width: 23%; 
+    height:90%; 
+    background-color:#FF0000;
+    font-color: #ffffff;
 
+}
+#orange 
+{
+    left: 26%;
+    top: 9%;
+    bottom:9%;
+    position:absolute;
+    width: 23%; 
+    height:90%; 
+    background-color:#FF5511;
+}
+#purple 
+{
+    left: 49%;
+    top: 9%;
+    bottom:9%;
+    position:absolute;
+    width: 23%; 
+    height:90%; 
+    background-color:#6600FF;
+}
+#green
+{
+    left: 72%;
+    top: 9%;
+    bottom:9%;
+    position:absolute;
+    width: 23%; 
+    height:90%; 
+    background-color:#00FF00;
+}
+        
+.button 
+{
+    color: white;
+    font-weight: bold
 }
