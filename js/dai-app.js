@@ -34,7 +34,7 @@ $(function () {
     }
 
     var profile = {
-        'dm_name': 'Bulb',
+        'dm_name': 'GeoLoGenerator',
         'df_list': [Luminance, Color_O],
     }
 
