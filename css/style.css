@@ -10,6 +10,7 @@ body {
 
 #container
 {
+    background-color: #335786;
     position: relative;
     height:90%;
     width:30%;
@@ -26,16 +27,54 @@ body {
 
 #color_wrapper
 {
-    position: relative;
+    position: absolute;
     width: 80%;
     height: 17%;
     top: 5%;
     left: 50%;
     margin-left: -40%;
     border-width: 1px;
-    box-shadow: inset 1px 1px 10px 1px rgba(5 ,10, 20, 0.5);
+    box-shadow: inset 1px 1px 1px 1px rgba(0 ,0, 0, 1);
+    border-radius: 1px;
+    background-color: #335786;
+    border-style: solid;
+}
+
+#text_wrapper
+{
+    background-color: #335786;
+    position: absolute;
+    width: 80%;
+    height: 17%;
+    top: 24%;
+    left: 50%;
+    margin-left: -40%;
+    border-width: 1px;
+    box-shadow: inset 1px 1px 1px 1px rgba(0 ,0, 0, 1);
     border-radius: 1px;
     border-style: solid;
+}
+
+#submit
+{
+    position: absolute;
+    width: 80%;
+    height: 3%;
+    top: 43%;
+    left: 50%;
+    margin-left: -40%;
+    background-color: #000000;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+
 }
 
 #red 
@@ -48,6 +87,7 @@ body {
     height:90%; 
     background-color:#FF0000;
     font-color: #ffffff;
+
 
 }
 #orange 
@@ -86,3 +126,59 @@ body {
     color: white;
     font-weight: bold
 }
+
+#lat {
+    position: absolute;
+    background-color: #335786;
+    border: none;
+    border-bottom: 3px solid black;
+    width: 60%;
+    left: 50%;
+    top: 9%;
+    margin-left: -30%;
+}
+
+#lng {
+    position: absolute;
+    background-color: #335786;
+    border: none;
+    border-bottom: 3px solid black;
+    width: 60%;
+    left: 50%;
+    top: 40%;
+    margin-left: -30%;
+}
+
+#description
+{
+    position: absolute;
+    background-color: #335786;
+    border: none;
+    border-bottom: 3px solid black;
+    width: 60%;
+    left: 50%;
+    top: 70%;
+    margin-left: -30%;
+}
+
+input[type=number]:focus {
+    outline: none;
+    border-color: black;
+}  
+
+input[type=text]:focus {
+    outline: none;
+    border-color: black;
+}  
+
+#submit:focus {
+    outline: none;
+    border-color: black;
+}  
+
+
+.button:focus {
+    outline: none;
+    border-color: black;
+    box-shadow: inset 1 1px 10px rgba(0,0,0,.075), 0 0 5px rgba(0, 0, 0, 0.5);
+}  
