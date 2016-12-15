@@ -136,6 +136,7 @@ body {
     left: 50%;
     top: 9%;
     margin-left: -30%;
+    
 }
 
 #lng {
@@ -165,6 +166,17 @@ input[type=number]:focus {
     outline: none;
     border-color: black;
 }  
+
+input[type=number] {
+    appearance: none;
+    margin: 0; 
+}  
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 input[type=text]:focus {
     outline: none;
