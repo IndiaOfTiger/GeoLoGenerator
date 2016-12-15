@@ -12,7 +12,7 @@ body {
 {
     background-color: #335786;
     position: relative;
-    height:90%;
+    height:45%;
     width:30%;
     left: 50%;
     top: 5%;
@@ -29,7 +29,7 @@ body {
 {
     position: absolute;
     width: 80%;
-    height: 17%;
+    height: 34%;
     top: 5%;
     left: 50%;
     margin-left: -40%;
@@ -45,8 +45,8 @@ body {
     background-color: #335786;
     position: absolute;
     width: 80%;
-    height: 17%;
-    top: 24%;
+    height: 34%;
+    top: 41%;
     left: 50%;
     margin-left: -40%;
     border-width: 1px;
@@ -59,8 +59,8 @@ body {
 {
     position: absolute;
     width: 80%;
-    height: 3%;
-    top: 43%;
+    height: 6%;
+    top: 76%;
     left: 50%;
     margin-left: -40%;
     background-color: #000000;
