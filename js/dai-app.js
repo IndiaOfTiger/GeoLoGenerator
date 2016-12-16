@@ -4,7 +4,9 @@ $(function () {
     var b = 0;
 
     $('#submit').on('click', function(){
-        $('#submit').toggle(500).toggle(500);});
+        $('#submit').toggle(500).toggle(500);
+        $('#lat').val("");
+        $('#lng').val("");});
 
     $('.button').on('click', function() {
         $('.button').removeClass('clicked');
