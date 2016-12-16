@@ -14,6 +14,7 @@ var dan = (function () {
     var _ctl_timestamp = '';
 
     function init (pull, endpoint, mac_addr, profile, callback) {
+        console.log(pull);
         _pull = pull;
         _mac_addr = mac_addr;
 

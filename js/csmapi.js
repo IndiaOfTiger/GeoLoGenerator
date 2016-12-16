@@ -69,13 +69,15 @@ var csmapi = (function () {
             url: ENDPOINT +'/'+ mac_addr +'/'+ idf_name,
             data: JSON.stringify({'data': data}),
             contentType:"application/json; charset=utf-8",
-        }).done(function () {
+        }).done(function (msg) {
             if (callback) {
                 callback(true);
+            console.log(msg);
             }
-        }).fail(function () {
+        }).fail(function (msg) {
             if (callback) {
                 callback(false);
+            console.log(msg);
             }
         });
     }

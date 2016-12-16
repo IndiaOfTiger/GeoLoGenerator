@@ -10,13 +10,14 @@ $(function () {
 
     $('.button').on('click', function() {
         $('.button').removeClass('clicked');
-        $(this).toggleClass('clicked');});
+        $(this).toggleClass('clicked');
+        $(this).push('Color-I',[255,20,20]);}); 
     
 
-    function Color_O (data) {
-        r = data[0];
-        g = data[1];
-        b = data[2];
+    function Color_I (data) {
+        r = 3;
+        g = 100;
+        b = 123;
     }
 
     function iot_app () {
@@ -29,7 +30,7 @@ $(function () {
     var profile = {
         'dm_name': 'GeoLoGenerator',
         'is_sim': false,
-        'df_list': [Color_O],
+        'df_list': [Color_I, 'GeoLo-I'],
     }
 
     var ida = {

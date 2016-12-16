@@ -8,19 +8,23 @@ const dai = function (profile, ida) {
         }
         return s() + s() + s();
     })();
-
+    // produce mac address
     if (profile.is_sim == undefined){
         profile.is_sim = false;
     }
-
+    // not simulating
     for (var i = 0; i < profile.df_list.length; i++) {
         df_name = profile.df_list[i].name.replace(/_/g, '-')
         df_func[df_name] = profile.df_list[i];
         profile.df_list[i] = df_name;
         console.log(df_name);
     }
+    // eg: Color_I -> Color-I
+    // df_func = Color_O r,g,b
+            console.log("odf_name:", odf_name);
 
     function pull (odf_name, data) {
+        console.log("odf_name:", odf_name);
         if (odf_name == 'Control') {
             switch (data[0]) {
             case 'SET_DF_STATUS':
