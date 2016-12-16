@@ -194,3 +194,11 @@ input[type=text]:focus {
     border-color: black;
     box-shadow: inset 1 1px 10px rgba(0,0,0,.075), 0 0 5px rgba(0, 0, 0, 0.5);
 }  
+
+.button.clicked{
+    border-radius: 1px;
+    border-color: black;
+    border-width: 1 px;
+    box-shadow: inset 1 1px 10px rgba(0,0,0,.075), 0 0 5px rgba(0, 0, 0, 0.5);
+
+}

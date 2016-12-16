@@ -4,7 +4,11 @@ $(function () {
     var b = 0;
 
     $('#submit').on('click', function(){
-        $('#submit').toggle(1000).toggle(1000);});
+        $('#submit').toggle(500).toggle(500);});
+
+    $('.button').on('click', function() {
+        $('.button').removeClass('clicked');
+        $(this).toggleClass('clicked');});
     
 
     function Color_O (data) {
@@ -23,7 +27,7 @@ $(function () {
     var profile = {
         'dm_name': 'GeoLoGenerator',
         'is_sim': false,
-        'df_list': ['Color_I'],
+        'df_list': [Color_O],
     }
 
     var ida = {
