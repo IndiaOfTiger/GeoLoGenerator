@@ -21,10 +21,9 @@ const dai = function (profile, ida) {
     }
     // eg: Color_I -> Color-I
     // df_func = Color_O r,g,b
-            console.log("odf_name:", odf_name);
 
-    function pull (odf_name, data) {
-        console.log("odf_name:", odf_name);
+    function pull (odf_name, data) { // who called this
+        console.log("odf_name:", odf_name); // odf_name = control whyyyyyy? odf_name and data (?)
         if (odf_name == 'Control') {
             switch (data[0]) {
             case 'SET_DF_STATUS':
@@ -64,4 +63,6 @@ const dai = function (profile, ida) {
     window.onpagehide = deregister;
 
     dan.init(pull, csmapi.get_endpoint(), mac_addr, profile, init_callback);
+    // window.location.origin = hostname + protocol
+    // all pull function sended
 };

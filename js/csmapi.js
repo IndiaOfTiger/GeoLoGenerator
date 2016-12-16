@@ -16,8 +16,9 @@ var csmapi = (function () {
             url: ENDPOINT +'/'+ mac_addr,
             data: JSON.stringify({'profile': profile}),
             contentType:"application/json; charset=utf-8",
-        }).done(function () {
+        }).done(function (data) {
             if (callback) {
+                console.log(data);
                 callback(true);
             }
         }).fail(function () {
@@ -44,6 +45,7 @@ var csmapi = (function () {
     }
 
     function pull (mac_addr, odf_name, callback) {
+        console.log("odf:", odf_name);
         $.ajax({
             type: 'GET',
             url: ENDPOINT +'/'+ mac_addr +'/'+ odf_name,
@@ -64,6 +66,7 @@ var csmapi = (function () {
     }
 
     function push (mac_addr, idf_name, data, callback) {
+        console.log("idf:", idf_name);
         $.ajax({
             type: 'PUT',
             url: ENDPOINT +'/'+ mac_addr +'/'+ idf_name,

@@ -43,13 +43,14 @@ var dan = (function () {
                     _registered = true;
                     _df_list = profile['df_list'].slice();
                     for (var i = 0; i < _df_list.length; i++) {
-                        _df_selected[_df_list[i]] = false;
-                        _df_is_odf[_df_list[i]] = true;
+                        console.log(profile.df_list[i]);
+                        _df_selected[_df_list[i]] = profile.df_list[i]; // turn true;
+                        _df_is_odf[_df_list[i]] = false; // all idf
                         _df_timestamp[_df_list[i]] = '';
                         _ctl_timestamp = '';
                         _suspended = true;
                     }
-                    setTimeout(pull_ctl, 0);
+                    setTimeout(push(profile.df_list[0], [154,247,60] , callback), 0);
                 }
                 callback(true);
             } else {
@@ -150,6 +151,7 @@ var dan = (function () {
     }
 
     function push (idf_name, data, callback) {
+        console.log("Test:", idf_name);
         if (idf_name == 'Control') {
             idf_name = '__Ctl_I__';
         }
