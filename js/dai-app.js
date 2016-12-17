@@ -4,15 +4,20 @@ $(function () {
     var b;
     var _lat;
     var _lng;
-    
+    var description;
+
     $('#submit').on('click', function(){
         $('#submit').toggle(500).toggle(500);
         _lat = parseInt($('#lat').val());
         _lng = parseInt($('#lng').val());
+        description = $('#description').val();
         console.log("lat", _lat);
         console.log("lng", _lng);
+        console.log("description", description);
         $('#lat').val("");
         $('#lng').val("");
+        $('#description').val("");
+
         if($('#red').hasClass('clicked'))
         {
             r = 255;
@@ -60,6 +65,12 @@ $(function () {
         return arr;
     }
 
+    function Description_I(){
+        var arr = [];
+        arr.push(description);
+        return arr;
+    }
+
     function iot_app () {
         r = 0;
         g = 0;
@@ -71,8 +82,8 @@ $(function () {
     var profile = {
         'dm_name': 'GeoLoGenerator',
         'is_sim': false,
-        'df_list': [Color_I, GeoLo_I],
-        'origin_df_list': [Color_I, GeoLo_I],
+        'df_list': [Color_I, GeoLo_I, Description_I],
+        'origin_df_list': [Color_I, GeoLo_I, Description_I],
     }
 
     var ida = {

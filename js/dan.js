@@ -142,7 +142,7 @@ var dan = (function () {
         if (!_registered) {
             return;
         }
-        console.log("hi0");
+        //console.log("hi0");
 
         if (index >= _df_list.length) {
             setTimeout(push_ctl, POLLING_INTERVAL);
@@ -155,7 +155,7 @@ var dan = (function () {
         function push_idf_callback () {
             push_idf(index + 1);
         }
-
+        console.log(_origin_df_list[index]());
         csmapi.push(_mac_addr, _df_name, _origin_df_list[index](), push_idf_callback);
     }
 
