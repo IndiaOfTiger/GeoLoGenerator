@@ -16,15 +16,24 @@ $(function () {
         $(this).csmapi.push('Color-I',[255,20,20]);}); 
     
 
-    function Color_I (data) {
+    function Color_I () {
+        var arr = [];
         r = 3;
         g = 100;
         b = 123;
+        arr.push(r);
+        arr.push(g);
+        arr.push(b);
+        return arr;
     }
 
-    function GeoLo_I (data) {
+    function GeoLo_I () {
+        var arr = [];
         lat = 3;
         lng = 3;
+        arr.push(lat);
+        arr.push(lng);
+        return arr;
     }
 
     function iot_app () {
@@ -38,6 +47,7 @@ $(function () {
         'dm_name': 'GeoLoGenerator',
         'is_sim': false,
         'df_list': [Color_I, GeoLo_I],
+        'origin_df_list': [Color_I, GeoLo_I],
     }
 
     var ida = {
