@@ -1,26 +1,52 @@
 $(function () {
-    var r = 0;
-    var g = 0;
-    var b = 0;
-    var lat = 0;
-    var lng = 0;
-
+    var r;
+    var g;
+    var b;
+    var _lat;
+    var _lng;
+    
     $('#submit').on('click', function(){
         $('#submit').toggle(500).toggle(500);
+        _lat = parseInt($('#lat').val());
+        _lng = parseInt($('#lng').val());
+        console.log("lat", _lat);
+        console.log("lng", _lng);
         $('#lat').val("");
-        $('#lng').val("");});
+        $('#lng').val("");
+        if($('#red').hasClass('clicked'))
+        {
+            r = 255;
+            g = 0;
+            b = 0;
+        }
+        if($('#orange').hasClass('clicked'))
+        {
+            r = 255;
+            g = 85;
+            b = 17;
+        }
+        if($('#purple').hasClass('clicked'))
+        {
+            r = 102;
+            g = 0;
+            b = 255;
+        }
+        if($('#green').hasClass('clicked'))
+        {
+            r = 0;
+            g = 255;
+            b = 0;
+        }
+        
+    });
 
     $('.button').on('click', function() {
         $('.button').removeClass('clicked');
-        $(this).toggleClass('clicked');
-        $(this).csmapi.push('Color-I',[255,20,20]);}); 
+        $(this).toggleClass('clicked');}) 
     
 
     function Color_I () {
         var arr = [];
-        r = 3;
-        g = 100;
-        b = 123;
         arr.push(r);
         arr.push(g);
         arr.push(b);
@@ -29,18 +55,17 @@ $(function () {
 
     function GeoLo_I () {
         var arr = [];
-        lat = 3;
-        lng = 3;
-        arr.push(lat);
-        arr.push(lng);
+        arr.push(_lat);
+        arr.push(_lng);
         return arr;
     }
 
     function iot_app () {
-        r = 40;
-        g = 40;
-        b = 40;
-        lum = 100;
+        r = 0;
+        g = 0;
+        b = 0;
+        _lat = 23.5832340;
+        _lng = 120.5825975;
     }
 
     var profile = {
