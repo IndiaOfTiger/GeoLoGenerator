@@ -8,8 +8,26 @@ $(function () {
 
     $('#submit').on('click', function(){
         $('#submit').toggle(500).toggle(500);
-        _lat = parseInt($('#lat').val());
-        _lng = parseInt($('#lng').val());
+        var temp_lat = _lat;
+        var temp_lng = _lng;
+        _lat = parseInt($('#lat').val()); // -16, 54
+        if(_lat < -16 || _lat > 54)
+        {
+            alert("Invalid input!");
+            $('#lat').val("");
+            _lat = temp_lat;
+            _lng = temp_lng;
+            return false;
+        }
+        _lng = parseInt($('#lng').val()); // 61, 179
+        if(_lng < 61 || _lng > 179)
+        {
+            alert("Invalid input!");
+            $('#lng').val("");
+            _lng = temp_lng;
+            _lat = temp_lat;
+            return false;
+        }
         description = $('#description').val();
         console.log("lat", _lat);
         console.log("lng", _lng);
@@ -75,8 +93,8 @@ $(function () {
         r = 0;
         g = 0;
         b = 0;
-        _lat = 23.5832340;
-        _lng = 120.5825975;
+        _lat = 0;
+        _lng = 0;
     }
 
     var profile = {
