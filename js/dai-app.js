@@ -2,10 +2,15 @@ $(function () {
     var r;
     var g;
     var b;
+    var markers = [];
     var _lat;
     var _lng;
     var description;
-
+    var interval = 1000; // 1000ms = 1sec
+    var output = {lat: 0, lng: 0};
+    var latDom = $('#Ilat > span');
+    var markersDom = $('#markers_added > span');
+    var lngDom = $('#Ilng > span');
     $('#submit').on('click', function(){
         $('#submit').toggle(500).toggle(500);
         var temp_lat = _lat;
@@ -61,6 +66,15 @@ $(function () {
             b = 0;
         }
         
+        var string;
+        var s_lat = _lat;
+        var s_lng = _lng;
+        string = '('  + s_lat + ',' + s_lng + ')' + '\n';
+        //markersDom.append(document.createTextNode(string));
+        var index = markers.length;
+        $(markersDom).append('<button class=".btn-default delete" value = "'+index+'">'+string+'</button>');
+        markers.push(index);
+
     });
 
     $('.button').on('click', function() {
@@ -95,6 +109,41 @@ $(function () {
         b = 0;
         _lat = 0;
         _lng = 0;
+    }
+
+    function domUpdater() {
+        // Try to only update once
+        //gg++;
+        //console.log(gg);
+        latDom.text(output.lat);
+        lngDom.text(output.lng);
+        //moveMapCenter();
+        //addMarker(output.lat, output.lng);
+        requestAnimationFrame(domUpdater);
+    }
+    requestAnimationFrame(domUpdater); // Refresh Page
+
+    function iotUpdater() {
+        //console.log(kk);
+        if( navigator.geolocation )
+        {
+            navigator.geolocation.getCurrentPosition(showPosition);
+            //deleteMarkers();
+            i = 0;
+            //succesiveMarker();
+        }
+    
+        //if( window.d_name )
+        //  IoTtalk.update(mac, 'Geolocation', [output.lat, output.lng]);
+        // Don't Understand
+        setTimeout(iotUpdater, interval);
+        //requestAnimationFrame(domUpdater);
+
+    }
+
+    function showPosition(position) {
+        output.lat = position.coords.latitude;
+        output.lng = position.coords.longitude;
     }
 
     var profile = {
