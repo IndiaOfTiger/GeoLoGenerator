@@ -5,7 +5,7 @@ $(function () {
     var markers = [];
     var _lat;
     var _lng;
-    var EQ_1;
+s    var EQ_1;
     var EQ_2;
     var description;
     var interval = 1000; // 1000ms = 1sec
@@ -78,6 +78,7 @@ $(function () {
             b = 0;
         }
 
+        
         var string;
         var s_lat = _lat;
         var s_lng = _lng;
@@ -85,6 +86,7 @@ $(function () {
         //markersDom.append(document.createTextNode(string));
         var index = markers.length;
         $(markersDom).append('<button class=".btn-default equivalence" value = "'+index+'">'+string+'</button>');
+        $(markersDom).append('<button class=".btn-default delete" value = "'+index+'">'+string+'</button>');
         markers.push(index);
 
     });
@@ -133,6 +135,12 @@ $(function () {
         return arr;
     }
 
+    function Description_I(){
+        var arr = [];
+        arr.push(description);
+        return arr;
+    }
+
     function EQ_I(){
         var arr = [];
         arr.push(EQ_1);
@@ -153,6 +161,19 @@ $(function () {
         _lat = 0;
         _lng = 0;
     }
+
+
+    function domUpdater() {
+        // Try to only update once
+        //gg++;
+        //console.log(gg);
+        latDom.text(output.lat);
+        lngDom.text(output.lng);
+        //moveMapCenter();
+        //addMarker(output.lat, output.lng);
+        requestAnimationFrame(domUpdater);
+    }
+    requestAnimationFrame(domUpdater); // Refresh Page
 
     function iotUpdater() {
         //console.log(kk);
@@ -182,6 +203,7 @@ $(function () {
         'is_sim': false,
         'df_list': [Color_I, GeoLo_I, Description_I, EQ_I, DogData_I],
         'origin_df_list': [Color_I, GeoLo_I, Description_I, EQ_I, DogData_I],
+
     }
 
     var ida = {
