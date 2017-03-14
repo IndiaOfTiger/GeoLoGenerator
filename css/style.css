@@ -7,29 +7,48 @@ body {
     background: #ffffff; 
     
 }
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    display: inline;
+}
 
 #container
 {
     background-color: rgba(51,87,134,0.8);
     position: relative;
-    height:45%;
-    width:30%;
+    height:40%;
+    width:60%;
     left: 50%;
     top: 5%;
-    margin-left: -15%;
+    margin-left: -30%;
     border-color: #000000;
     border-width: 2px;
     border-style: solid;
     box-shadow: inset -10px 0px 1px 6px rgba(0 ,0, 0, 1);
-
 }
 
+#Geo-Info
+{
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    width: 25%;
+    height: 15%;
+    background-color: #DCDCDC;
+    border-color: #708090;
+    border-width: 1px;
+    border-style: solid;
+}
 
 #color_wrapper
 {
     position: absolute;
-    width: 80%;
-    height: 34%;
+    width: 40%;
+    height: 45%;
     top: 5%;
     left: 50%;
     margin-left: -40%;
@@ -44,9 +63,9 @@ body {
 {
     background-color: #335786;
     position: absolute;
-    width: 80%;
-    height: 34%;
-    top: 41%;
+    width: 40%;
+    height: 31%;
+    top: 51%;
     left: 50%;
     margin-left: -40%;
     border-width: 1px;
@@ -55,16 +74,77 @@ body {
     border-style: solid;
 }
 
+#markers_added
+{
+    background-color: #335786;
+    position: absolute;
+    width: 40%;
+    height: 62%;
+    top: 21%;
+    left: 55%;
+    /*margin-left: -40%;*/
+    border-width: 1px;
+    box-shadow: inset 1px 1px 1px 1px rgba(0 ,0, 0, 1);
+    border-radius: 1px;
+    border-style: solid;
+}
+
 #submit
 {
+    border-color: #000000;
     position: absolute;
-    width: 80%;
-    height: 6%;
-    top: 76%;
+    width: 40%;
+    height: 10%;
+    top: 85%;
     left: 50%;
     margin-left: -40%;
-    background-color: #000000;
-    border: none;
+    background-color: #335786;
+    border-width: 2px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+#eq_instruction
+{
+    position: absolute;
+    width: 40%;
+    height: 15%;
+    top: 5%;
+    left: 55%;
+    background-color: #335786;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+    border-width: 1px;
+    border-radius: 1px;
+    border-style: solid;
+    border-color: #000000;
+
+}
+#eq_submit
+{
+    border-color: #000000;
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    top: 85%;
+    left: 55%;
+    background-color: #335786;
+    border-width: 2px;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -188,6 +268,11 @@ input[type=text]:focus {
     border-color: black;
 }  
 
+.eq_clicked{
+    outline: none;
+    border-color: black;
+    box-shadow: inset 1 1px 10px rgba(0,0,0,.075), 0 0 5px rgba(0, 0, 0, 0.5);
+}
 
 .button:focus {
     outline: none;
